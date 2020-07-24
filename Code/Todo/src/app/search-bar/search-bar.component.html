@@ -1,0 +1,20 @@
+<form (submit)="handleSubmit($event)">
+  <!-- whenever form gets submitted, we call the method handleSubmit and pass it event
+    $event is reserved keyword for events
+   -->
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      [value]="task"
+      (input)="handleInput($event)"
+    />
+    <!--      [(ngModel)]="task" same as above-->
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">
+        <!--   clicking on button will make the form submit     -->
+        Add Todo
+      </button>
+    </div>
+  </div>
+</form>

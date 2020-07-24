@@ -1,0 +1,12 @@
+<div class="container">
+  <!-- container class from bootstrap add some padding to left and right  -->
+  <app-search-bar (addTodo)="addMyTodo($event)"></app-search-bar>
+  <!--  addTodo is a custom event that get called whenever add button is clicked -->
+  <app-todo-list
+    [myTodos]="todos"
+    (toggle)="flipCompleted($event)"
+    (delete)="todos.splice($event, 1)"
+  ></app-todo-list>
+  <!-- myTodos is property inside todo-list and  we are passing todos property inside the app.component.ts -->
+  <!-- toggle and delete are custom events that pass index of element that is clicked -->
+</div>

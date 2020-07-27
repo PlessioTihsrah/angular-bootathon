@@ -1,0 +1,20 @@
+<ul class="list-group">
+  <!-- we loop for every item in myTodos array   -->
+  <li
+    class="list-group-item"
+    *ngFor="let task of todos; let myIndex = index"
+    (click)="toggleItem(myIndex)"
+  >
+    <!-- if task.completed is true, CSS class striked will be applied   -->
+    <span [ngClass]="{ striked: task.completed }">{{ task.title }}</span>
+
+    <!-- this button will be displayed only when task.completed is true   -->
+    <button
+      (click)="removeItem($event, myIndex)"
+      *ngIf="task.completed"
+      class="btn btn-danger float-right"
+    >
+      Delete
+    </button>
+  </li>
+</ul>

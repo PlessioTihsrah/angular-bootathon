@@ -1,0 +1,13 @@
+<form (submit)="handleSubmit($event)">
+  <div class="input-group my-3">
+    <input
+      type="text"
+      class="form-control"
+      [value]="todoTask"
+      (input)="handleInput($event)"
+    />
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">Add Todos</button>
+    </div>
+  </div>
+</form>

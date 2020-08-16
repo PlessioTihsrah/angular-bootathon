@@ -1,0 +1,6 @@
+<h1>Data Provided</h1>
+ID: {{ params.id }}
+<!--Looping over object-->
+<div *ngFor="let param of queryParams | keyvalue">
+  {{ param.key }} : {{ param.value }}
+</div>
